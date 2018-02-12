@@ -70,12 +70,11 @@ open class AutoCompleteTextField: UITextField {
         didSet { actfLabel.font = font }
     }
     
-    override open var textColor: UIColor? {
+    open var suggestionColor: UIColor? {
         didSet {
-            actfLabel.textColor = textColor?.withAlphaComponent(0.5)
+            actfLabel.textColor = suggestionColor
         }
     }
-    
     
     // MARK: - Initialization
     
@@ -174,9 +173,9 @@ open class AutoCompleteTextField: UITextField {
         let stringFilter = ignoreCase ? queryString.lowercased() : queryString
         let suggestedDomains = dataSource.filter { (domain) -> Bool in
             if ignoreCase {
-                return domain.text.lowercased().contains(stringFilter)
+                return domain.text.lowercased().hasPrefix(stringFilter)
             }else{
-                return domain.text.contains(stringFilter)
+                return domain.text.hasPrefix(stringFilter)
             }
         }
         
