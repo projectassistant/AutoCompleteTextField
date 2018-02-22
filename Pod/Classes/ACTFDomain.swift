@@ -61,7 +61,7 @@ public struct ACTFDomain: Codable {
         }
     }
     
-    public static func storeDomainsForKey(domains: [ACTFDomain], key: String) -> Bool {
+    public static func storeDomains(_ domains: [ACTFDomain], forKey key: String) -> Bool {
         
         // store
         do {

@@ -64,7 +64,7 @@ class ViewController: UIViewController, ACTFDataSource, UITextFieldDelegate {
             print("Store success")
         }
         // store multiple
-        if ACTFDomain.storeDomainsForKey(domains: weightedDomains, key: "Domains") {
+        if ACTFDomain.storeDomains(weightedDomains, forKey: "Domains") {
             print("Store success")
         }
         
